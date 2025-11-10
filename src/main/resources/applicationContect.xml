@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<bean class="SpringCore3.Emp1" id="emp1">
+		<property name="name" value="navyatha"></property>
+		<property name="salary" value="35000"></property>
+		<property name="dept" ref="deptemp1"></property>
+	</bean>
+	
+	<bean class="SpringCore3.Department" id="deptemp1">
+	 <constructor-arg name="deptName" value="cse"></constructor-arg>
+	</bean>
+	
+	<bean class="SpringCore3.Department" id="depts">
+	 <constructor-arg name="deptName" value="ece"></constructor-arg>
+	</bean>
+	
+	<bean class="SpringCore3.Emp2" id="emp2">
+		<constructor-arg name="name" value="anki"></constructor-arg>
+		<constructor-arg name="salary" value="40000"></constructor-arg>
+		<property name="dept" ref="depts"></property>
+	</bean>
+</beans>
